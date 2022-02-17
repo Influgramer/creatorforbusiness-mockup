@@ -1,0 +1,65 @@
+.btn-primary {
+    color: #fff;
+    background-color: #851dfa;
+    border-color: #851dfa;
+}
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus {
+    color: #fff;
+    background-color: #851dfa;
+    border-color: #851dfa;
+}
+.btn-outline-primary {
+    color: #851dfa;
+    border-color: #851dfa;
+}
+.btn-outline-primary:hover {
+    color: #fff;
+    background-color: #851dfa;
+    border-color: #851dfa;
+}
+.form-check-input:checked {
+    background-color: #851dfa;
+    border-color: #851dfa;
+}
+
+#header-container header .navbar-logo img{
+    min-height: 25px;
+}
+
+#page .home-hero h1{
+    color: #851dfa;
+}
+
+#page .search-creator #searchCreator-geolocationMap{
+    height: 300px;
+    border-radius: 0.25rem;
+    opacity: 0.5;
+    pointer-events: none;
+}
+#page .search-creator #searchCreator-geolocationMap.active{
+    opacity: 1.0;
+    pointer-events: all;
+}
+#page .search-creator .search-creator-geolocation{
+    visibility: collapse;
+}
+#page .search-creator .search-creator-geolocation.active{
+    visibility: visible;
+}
+
+@media (max-width: 991px){
+    #page .search-creator #searchCreator-geolocationMap{
+        display: none;
+    }
+    #page .search-creator #searchCreator-geolocationMap.active{
+        display: block;
+    }
+    #page .search-creator .search-creator-geolocation{
+        height: 0px;
+    }
+    #page .search-creator .search-creator-geolocation.active{
+        height: auto;
+    }
+}

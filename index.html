@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Creator For Business</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    
+    <!-- Google Maps & Places -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5CfhXyPaRIiipzFVLvke6NZUkB9arLm4&libraries=visualization,places"></script>
+
+    <!-- Styles & Scripts -->
+    <link href="./css/website.css" rel="stylesheet">
+    <script src="./js/nations-data.js"></script>
+	
+</head>
+<body>
+    <!-- begin: Header Container -->
+    <div id="header-container">
+        <div class="container">
+            <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-4 border-bottom">
+                <a href="/" class="navbar-logo d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+                    <img src="./img/logo-navbar.svg">
+                </a>
+        
+                <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="#" class="nav-link px-3 link-secondary">Home</a></li>
+                    <li><a href="#" class="nav-link px-3 link-dark">Servizi</a></li>
+                    <li><a href="#" class="nav-link px-3 link-dark">Prezzi</a></li>
+                    <li><a href="#" class="nav-link px-3 link-dark">Contatti</a></li>
+                </ul>
+        
+                <div class="col-lg-3 text-end">
+                    <button type="button" class="btn btn-outline-primary me-2">Accedi</button>
+                    <button type="button" class="btn btn-primary">Registrati</button>
+                </div>
+            </header>
+        </div>
+    </div>
+    <!-- end: Header Container -->
+    <!-- begin: Main Container -->
+    <div id="main-container">
+        <!-- begin: Page -->
+        <div id="page">
+
+            <!-- begin: Home Hero -->
+            <section class="home-hero">
+                <div class="container col-xxl-8 px-4 py-5">
+                    <form id="searchCreator" class="search-creator">
+                        <div class="row align-items-center g-5 py-5">
+                            <div class="col-lg-6 mt-0">
+                                <h1>Trova ora il tuo Creator</h1>
+                                <!-- row {sex, age} -->
+                                <div class="row my-3">
+                                    <!-- col {sex} -->
+                                    <div class="col">
+                                        <div class="form-floating">
+                                            <select class="form-select" id="searchCreator-sex" name="sex">
+                                            <option value="@" selected>Qualsiasi</option>
+                                            <option value="M">Maschio</option>
+                                            <option value="F">Femmina</option>
+                                            </select>
+                                            <label for="searchCreator-sex">Sesso:</label>
+                                        </div>
+                                    </div>
+                                    <!-- col {age} -->
+                                    <div class="col">
+                                        <div class="form-floating">
+                                            <select class="form-select" id="searchCreator-age" name="age">
+                                                <option value="@" selected>Qualsiasi</option>
+                                                <option value="18to25">18 - 25</option>
+                                                <option value="25to30">25 - 30</option>
+                                                <option value="30to45">30 - 45</option>
+                                                <option value="45to@">over 45</option>
+                                            </select>
+                                            <label for="searchCreator-age">Età:</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- row {category} -->
+                                <div class="row my-3">
+                                    <!-- col {category} -->
+                                    <div class="col">
+                                        <div class="form-floating">
+                                            <select class="form-select" id="searchCreator-category" name="category">
+                                                <option value="@" selected>Qualsiasi</option>
+                                                <option value="200">Fashion, accessori, life-style</option>
+                                                <option value="201">Lusso, design, gioielli</option>
+                                                <option value="202">Cibo, vino, bevande</option>
+                                                <option value="203">Fitness, sport, body-building</option>
+                                                <option value="204">Viaggi, città, paesaggi</option>
+                                                <option value="205">Estetica, makeup, nails</option>
+                                                <option value="206">Mamme, papà, famiglia</option>
+                                                <option value="207">Vita notturna, dance, party</option>
+                                                <option value="208">Salute, benessere, meditazione</option>
+                                                <option value="209">Animali, natura, ecologia</option>
+                                                <option value="210">Fotografia professionale, tecnologia</option>
+                                                <option value="211">Motori, wrapping, fai da te</option>
+                                                <option value="212">Celebrità, personaggio pubblico, artista</option>
+                                                <option value="213">Musica, eventi, teatro</option>
+                                                <option value="214">Hobbistica, collezionisti, anime</option>
+                                                <option value="215">Coppie, matrimonio, LGBT</option>
+                                                <option value="216">Eros, esibizionismo</option>
+                                                <option value="217">Associazioni, circoli, no-profit</option>
+                                                <option value="218">Tatuaggi, piercing</option>
+                                            </select>
+                                            <label for="searchCreator-category">Categoria:</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- row {followers, submit} -->
+                                <div class="row my-3">
+                                    <!-- col {followers} -->
+                                    <div class="col">
+                                        <div class="form-floating">
+                                            <select class="form-select" id="searchCreator-followers" name="followers">
+                                                <option value="@" selected="">Qualsiasi</option>
+                                                <option value="1000to10000">NANO (da 1k a 10k followers)</option>
+                                                <option value="10000to100000">MICRO (da 10k a 100k followers)</option>
+                                                <option value="100000to300000">MACRO (da 100k a 300k followers)</option>
+                                                <option value="300000to@">BIG (oltre 300k followers)</option>
+                                            </select>
+                                            <label for="searchCreator-followers">Followers:</label>
+                                        </div>
+                                    </div>
+                                    <!-- col {submit} -->
+                                    <div class="col d-grid gap-2">
+                                        <button type="button" class="btn btn-lg btn-primary">Cerca</button>
+                                    </div>
+                                    
+                                </div>
+                                <!-- row {geolocation toggle} -->
+                                <div class="row my-3">
+                                    <!-- col {geolocation toggle} -->
+                                    <div class="col d-flex align-items-center">
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="checkbox" role="switch" id="searchCreator-geolocationToggle" name="geolocationToggle">
+                                            <label class="form-check-label" for="searchCreator-geolocationToggle">
+                                                Ricerca per localizzazione
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- row {geolocation search, geolocation radius} -->
+                                <div class="row my-3 search-creator-geolocation">
+                                    <div class="col-md-7 mb-3 mb-md-0">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="searchCreator-geolocationSearch" name="geolocationSearch">
+                                            <label for="searchCreator-geolocationSearch">Cerca per città o indirizzo:</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <div class="form-floating">
+                                            <input type="number" class="form-control" id="searchCreator-geolocationRadius" name="geolocationRadius" min="0" step="1">
+                                            <label for="searchCreator-geolocationRadius">Distanza in Km</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 mt-0 mt-lg-4">
+                                <!-- map {geolocation map} -->
+                                <div id="searchCreator-geolocationMap"></div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+            <!-- end: Home Hero -->
+
+        </div>
+        <!-- end: Page -->
+    </div>
+    <!-- end: Main Container -->
+    <!-- begin: Footer Container -->
+    <div id="footer-container">
+        <!-- FOOTER -->
+    </div>
+    <!-- end: Footer Container -->
+
+    <!-- begin: page script -->
+    <script type="text/javascript">
+        const SearchCreatorController={
+            map:null,
+            mapCircle:null,
+            autocomplete:null,
+            form:{
+
+                geolocationLat:null,
+                geolocationLng:null,
+                geolocationRadius:0,//[m]
+            },
+            init:function(){
+                const scope=this;
+                const defaultLocation={lat: 45.4642, lng: 9.1900};
+                const countryLocation=NationsDataProvider.getLocationFromCountryCode(NationsDataProvider.getBrowserCountryCode());
+                const mapLocation=(countryLocation!==null ? countryLocation : defaultLocation);
+                //init map
+                this.map=new google.maps.Map(document.getElementById('searchCreator-geolocationMap'), {   
+                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                    streetViewControl: false,
+                    mapTypeControl: false,
+                    fullscreenControl: false,
+                    center: mapLocation,
+                    zoom: 10
+                });
+                //init autocomplete
+                const autocompleteOptions={};
+                const autocompleteElement=document.getElementById('searchCreator-geolocationSearch');
+                this.autocomplete=new google.maps.places.Autocomplete(autocompleteElement, autocompleteOptions);
+                google.maps.event.addListener(this.autocomplete, 'place_changed', function(){
+                    const place=scope.autocomplete.getPlace();
+                    scope.form.geolocationLat=place.geometry.location.lat();
+                    scope.form.geolocationLng=place.geometry.location.lng();
+                    scope.renderMap();
+                });
+                this.initListeners();
+            },
+            initListeners:function(){
+                const scope=this;
+                $('#searchCreator-geolocationToggle').click(function(){
+                    const status=$(this).is(':checked');
+                    scope.onGeolocationToggle(status);
+                });
+                $('#searchCreator-geolocationRadius').on('input', function(){
+                    const value=parseFloat($(this).val());
+                    //assuming input unit is Kilometers
+                    //converting in meters
+                    scope.form.geolocationRadius=(value*1000);
+                    scope.renderMap();
+                });
+            },
+            onGeolocationToggle:function(status){
+                if(status){
+                    $('#page .search-creator #searchCreator-geolocationMap').addClass('active');
+                    $('#page .search-creator .search-creator-geolocation').addClass('active');
+                }
+                else{
+                    $('#page .search-creator #searchCreator-geolocationMap').removeClass('active');
+                    $('#page .search-creator .search-creator-geolocation').removeClass('active');
+                }
+            },
+            renderMap:function(){
+                if(this.form.geolocationLat!==null && this.form.geolocationLng!==null){
+                    const center={lat:this.form.geolocationLat, lng:this.form.geolocationLng};
+                    this.map.panTo(center);
+                    if(this.form.geolocationRadius>0){
+                        if(this.mapCircle!==null){
+                            this.mapCircle.setMap(null);
+                        }
+                        this.mapCircle=new google.maps.Circle({
+                            map: this.map,
+                            radius: this.form.geolocationRadius,//[m]
+                            center: center,
+                            fillColor: '#851dfa',
+                            fillOpacity: 0.2,
+                            strokeColor: '#851dfa',
+                            strokeOpacity: 0.8,
+                            strokeWeight: 2
+                        });
+                        this.map.fitBounds(this.mapCircle.getBounds());
+                    }
+                }
+            }
+        };
+        //launch page script
+        $(document).ready(function() {
+            SearchCreatorController.init();
+        });
+    </script>
+    <!-- end: page script -->
+</body>
+</html>
